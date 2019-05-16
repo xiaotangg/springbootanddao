@@ -4,6 +4,7 @@ spring:
     username: root
     password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
+#@MapperScan注解和mybatis.mapper-locations缺一不可，前者扫描dao接口，后者扫描接口实现的mapper文件
 mybatis:
   mapperLocations: classpath:springboot/mapper/*Mapper.xml
 server:
