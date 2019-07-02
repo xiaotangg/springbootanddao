@@ -1,6 +1,5 @@
 package springboot;
 
-import org.apache.ibatis.jdbc.Null;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import springboot.service.UserService;
+import springboot.controller.UserController;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -21,19 +20,38 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-//@WebAppConfiguration
+@SpringBootTest(classes=springboot.SpringbootanddaoApplication.class)
+@WebAppConfiguration
 //@ContextConfiguration(locations = {"classpath*:**application.yml"})
-public class MyTest {
+public class MyTestForController {
 
+    private MockMvc mvc;
     @Autowired
-    private UserService userService;
+    private WebApplicationContext context;
+
+    @Before
+    public void setMvc(){
+        mvc = MockMvcBuilders.webAppContextSetup(context).build();
+//        mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
+    }
 
 
     @Test
-    public void testGetUser(){
-        System.out.println(userService.getUserByPrimaryKey(1001));
+    public void testMyController() throws Exception {
+        // 测试UserController
+        RequestBuilder request = null;
+
+        // 1、get查一下user列表，应该为空
+        request = get("/User/getuser");
+        mvc.perform(request)
+                .andExpect(status().isOk())
+                .andDo(print());
+
     }
+
+
+
+
 
 
 }
