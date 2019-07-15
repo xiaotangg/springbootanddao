@@ -15,6 +15,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import springboot.service.UserService;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -34,6 +37,7 @@ public class MyTest {
     public void testGetUser(){
         System.out.println(userService.getUserByPrimaryKey(1001));
     }
+
 
 
 }
