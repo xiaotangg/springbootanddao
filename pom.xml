@@ -86,14 +86,9 @@
 				</includes>
 				<filtering>true</filtering>
 			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.properties</include>
-					<include>**/*.yml</include>
-				</includes>
-				<filtering>false</filtering>
-			</resource>
+			<!--<resource>-->
+				<!--<directory>src/main/resources</directory>-->
+			<!--</resource>-->
 		</resources>
 	</build>
 

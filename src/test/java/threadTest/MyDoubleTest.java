@@ -68,8 +68,13 @@ public class MyDoubleTest  implements  Cloneable {
 
     @Test
     public void testEqual(){
-        int i;
-        System.out.println((i=10)==11);
+       BigDecimal number=new BigDecimal(1);
+       changLong(number);
+        System.out.println(number);
+    }
+
+    public static void changLong(BigDecimal number){
+        number.add(new BigDecimal(2));
     }
 
 }

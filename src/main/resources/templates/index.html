@@ -7,10 +7,32 @@
     <title>templates首页aaa</title>
 </head>
 <body>
+<script type="text/javascript">
+    function  A() {
+    }
+
+    A.prototype.say=function () {
+        alert("A");
+    }
+    
+    var a=new A();
+    A.prototype.say=function () {
+        alert("a");
+    }
+    
+    
+    a.say();
+
+
+</script>
     <form  action="#" th:action="@{/User/doSomething}"  method="post">
         <input name="_method"  hidden="true" value="put" />
         <input  name="id"   value="123" />
         <button type="submit">更新</button>
+    </form>
+
+    <form  action="#" th:action="@{/User/download}"  method="post">
+    <button type="submit">下载</button>
     </form>
 </body>
 </html>

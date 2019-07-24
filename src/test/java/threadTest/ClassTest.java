@@ -12,6 +12,10 @@ import java.util.stream.Collectors;
 
 public class ClassTest {
 
+
+
+
+
     @Test
     public void test1(){
         System.out.println(1);
@@ -84,5 +88,47 @@ public class ClassTest {
         return list;
 
     }
+
+
+    @Test
+    public void test3(){
+//        String a="123";
+//        changeStr(a);
+//        System.out.println(a);
+        Son son=new Son();
+
+    }
+
+    class Parent{
+        Parent(){
+
+        }
+        protected void mehtodA(int a,int b){
+            System.out.println("parent");
+        }
+    }
+
+    class Son extends Parent{
+        Son(){
+            super();
+        }
+        private   void methodA(String a,int b){
+            System.out.println("son");
+        }
+    }
+
+    public void changeStr(String path) {
+        path="456";
+    }
+
+    public static void foo(String name) {
+        System.out.println(name);
+    }
+
+    public static void main(String[] args) {
+        int i=0;
+
+    }
+
 
 }
