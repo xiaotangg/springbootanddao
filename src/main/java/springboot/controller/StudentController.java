@@ -1,17 +1,13 @@
 package springboot.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import springboot.dao.UserT;
-import springboot.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,17 +17,17 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 @Controller
-@RequestMapping("/User")
-public class UserController {
+@RequestMapping("/Student")
+public class StudentController {
 
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private UserService userService;
 
-    @RequestMapping("/getuser")
-    @ResponseBody
-    public UserT getUserByPrimaryKey(){
-        return userService.getUserByPrimaryKey(1001);
-    }
+//    @RequestMapping("/getuser")
+//    @ResponseBody
+//    public UserT getUserByPrimaryKey(){
+//        return userService.getUserByPrimaryKey(1001);
+//    }
 
     @RequestMapping("/index")
     public String userUpdate(){

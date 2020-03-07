@@ -1,42 +1,35 @@
 package threadTest;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud;
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
-import springboot.dao.UserT;
-
-import java.util.*;
-import java.util.stream.Collectors;
-
 public class StreamTest {
-    public static void main(String[] args) {
-        //stream练习
-        //构建数据
-        UserT user1=new UserT();
-        user1.setId(1);
-        user1.setAge(18);
-        user1.setUserName("user1");
-        user1.setPassword("password1");
-        UserT user2=new UserT();
-        user2.setId(2);
-        user2.setAge(19);
-        user2.setUserName("user2");
-        user2.setPassword("password2");
-        UserT user3=new UserT();
-        user3.setId(3);
-        user3.setAge(20);
-        user3.setUserName("user3");
-        user3.setPassword("password3");
-        UserT user4=new UserT();
-        user4.setId(1);
-        user4.setAge(21);
-        user4.setUserName("user4");
-        user4.setPassword("password4");
-
-        List<UserT> userTList=new ArrayList<UserT>();
-        userTList.add(user1);
-        userTList.add(user2);
-        userTList.add(user3);
-        userTList.add(user4);
+//    public static void main(String[] args) {
+//        //stream练习
+//        //构建数据
+//        UserT user1=new UserT();
+//        user1.setId(1);
+//        user1.setAge(18);
+//        user1.setUserName("user1");
+//        user1.setPassword("password1");
+//        UserT user2=new UserT();
+//        user2.setId(2);
+//        user2.setAge(19);
+//        user2.setUserName("user2");
+//        user2.setPassword("password2");
+//        UserT user3=new UserT();
+//        user3.setId(3);
+//        user3.setAge(20);
+//        user3.setUserName("user3");
+//        user3.setPassword("password3");
+//        UserT user4=new UserT();
+//        user4.setId(1);
+//        user4.setAge(21);
+//        user4.setUserName("user4");
+//        user4.setPassword("password4");
+//
+//        List<UserT> userTList=new ArrayList<UserT>();
+//        userTList.add(user1);
+//        userTList.add(user2);
+//        userTList.add(user3);
+//        userTList.add(user4);
 
 //        练习一(这种形式是处理list转map情况下key重复时，前提是list，一种不错的解决方案)
 //        通过list获取一个Int为key，List<object>为value 的map
@@ -90,11 +83,11 @@ public class StreamTest {
 //
 //
 //        练习八（list集合所有学生的年龄总值）
-        Integer sum = userTList.stream().map(UserT::getAge).reduce(Integer::sum).get();
-        System.out.println(sum);
+//        Integer sum = userTList.stream().map(UserT::getAge).reduce(Integer::sum).get();
+//        System.out.println(sum);
 //
 
 
-    }
+//    }
 
 }

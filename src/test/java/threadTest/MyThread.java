@@ -25,12 +25,12 @@ public class MyThread  implements  Runnable {
 
         lock.lock();
         try {
-            while(time<10) {
-                System.out.println(print);
-//                nextCondition.signal();
-//                if (time < times - 1) {
-//                    currentCondition.await();
-//                }
+            while(time<times) {
+                System.out.print(print);
+                nextCondition.signal();
+                if (time < times - 1) {    //最后一次不用锁住自己了
+                    currentCondition.await();
+                }
                 time++;
             }
             }catch (Exception e){
@@ -52,11 +52,11 @@ public class MyThread  implements  Runnable {
         Thread threadC=new Thread(new MyThread(lock,conditionC,conditionA,"C",10));
 
         threadA.start();
-//        Thread.sleep(1000);
+        Thread.sleep(1000);
         threadB.start();
-//        Thread.sleep(1000);
+        Thread.sleep(1000);
         threadC.start();
-//        Thread.sleep(1000);
+        Thread.sleep(1000);
 
 
     }

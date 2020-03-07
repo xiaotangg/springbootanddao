@@ -10,6 +10,9 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class DateTest {
+
+     int a=2;
+
     @Test
     public void test1(){
         LocalDate now = LocalDate.now();
