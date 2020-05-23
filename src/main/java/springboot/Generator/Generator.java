@@ -46,7 +46,7 @@ public class Generator {
         GlobalConfig globalConfig = new GlobalConfig();
         //生成文件的输出目录
         String projectPath = System.getProperty("user.dir");
-        globalConfig.setOutputDir( "D://java");
+        globalConfig.setOutputDir("D://java");
         //Author设置作者
         globalConfig.setAuthor("tjj");
         //是否覆盖文件
@@ -107,7 +107,7 @@ public class Generator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return   "D://java/mapper/"+ pc.getModuleName()
+                return "D://java/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });

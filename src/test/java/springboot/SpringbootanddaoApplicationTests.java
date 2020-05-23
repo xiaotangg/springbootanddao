@@ -18,16 +18,17 @@ public class SpringbootanddaoApplicationTests {
 
 
     @Test
-    public void testGetStudents(){
+    public void testGetStudents() {
         List<Student> allStudents = studentService.getAllStudents();
-        for (Student student:allStudents) {
+        for (Student student : allStudents) {
             System.out.println(student);
         }
     }
 
 
     @Test
-    public void testDeleteStudents(){
-       studentService.deleteStudent();
+    public void testDeleteStudents() {
+
+        studentService.deleteStudent();
     }
 }

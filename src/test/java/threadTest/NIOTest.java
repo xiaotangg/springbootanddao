@@ -18,7 +18,7 @@ public class NIOTest {
             File file = ResourceUtils.getFile("classpath:a.txt");
             FileChannel fileChannel = new FileInputStream(file).getChannel();
             //分配buffer
-            int readLength = 5;
+            int readLength = 15;
             ByteBuffer byteBuffer = ByteBuffer.allocate(readLength);
             int length;
             byte[] nioByte = new byte[1024];
@@ -27,7 +27,7 @@ public class NIOTest {
                 time++;
                 byteBuffer.flip();
                 byteBuffer.get(nioByte, 0, length);
-                System.out.println(new String(nioByte, 0, length, "UTF-8"));
+                System.out.println(new String(nioByte, 0, length, "UTF-8")+"-----length:"+length);
                 byteBuffer.clear();
             }
             System.out.println(time);

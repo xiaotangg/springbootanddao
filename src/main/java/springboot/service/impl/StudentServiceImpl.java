@@ -25,19 +25,19 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAllStudents() {
-        List<Student> list=new ArrayList<>();
+        List<Student> list = new ArrayList<>();
         List<Student> dbOneStudents = studentMapper.selectList(new QueryWrapper<>());
-        List<Student> dbSecondStudents =studentSecondMapper.selectList(new QueryWrapper<>());
+        List<Student> dbSecondStudents = studentSecondMapper.selectList(new QueryWrapper<>());
         list.addAll(dbOneStudents);
         list.addAll(dbSecondStudents);
-        return   list;
+        return list;
     }
 
     @Override
     public void deleteStudent() {
         int dbOne = studentMapper.delete(new QueryWrapper<Student>().lambda().eq(Student::getSId, "05"));
         int dbSecond = studentSecondMapper.delete(new QueryWrapper<Student>().lambda().eq(Student::getSId, "09"));
-        int i=1/0;
+        int i = 1 / 0;
 
     }
 }

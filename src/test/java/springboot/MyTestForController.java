@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes=springboot.SpringbootanddaoApplication.class)
+@SpringBootTest(classes = springboot.SpringbootanddaoApplication.class)
 @WebAppConfiguration
 //@ContextConfiguration(locations = {"classpath*:**application.yml"})
 public class MyTestForController {
@@ -28,7 +28,7 @@ public class MyTestForController {
     private WebApplicationContext context;
 
     @Before
-    public void setMvc(){
+    public void setMvc() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
 //        mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
     }
@@ -46,10 +46,6 @@ public class MyTestForController {
                 .andDo(print());
 
     }
-
-
-
-
 
 
 }

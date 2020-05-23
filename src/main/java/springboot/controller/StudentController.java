@@ -30,13 +30,13 @@ public class StudentController {
 //    }
 
     @RequestMapping("/index")
-    public String userUpdate(){
-       return "index";
+    public String userUpdate() {
+        return "index";
     }
 
     @PutMapping("/doSomething")
     @ResponseBody
-    public String userUpdate(String id){
+    public String userUpdate(String id) {
         System.out.println(id);
         return id;
     }
@@ -44,7 +44,7 @@ public class StudentController {
 
     //使用NIO进行文件下载
     @PostMapping("/download")
-    public void download( HttpServletResponse response){
+    public void download(HttpServletResponse response) {
         try {
             File fileA = ResourceUtils.getFile("classpath:a.txt");
             response.setContentType("multipart/form-data");
@@ -53,8 +53,8 @@ public class StudentController {
 
             FileChannel channel = new FileInputStream(fileA).getChannel();
             ByteBuffer buffer = ByteBuffer.allocate(1024);
-            byte[] byteArray=new byte[1024];
-            int nRead,nGet;
+            byte[] byteArray = new byte[1024];
+            int nRead, nGet;
             //while中的条件其实是从通道往缓冲区写数据
             while ((nRead = channel.read(buffer)) != -1) {
                 if (nRead == 0) {

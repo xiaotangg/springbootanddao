@@ -34,7 +34,7 @@ public class MyThread2 implements Runnable {
                 }
                 // 不是最后一次则通过fontLock等待被唤醒
                 // 必须要加判断，不然虽然能够打印10次，但10次后就会直接死锁
-                if(i < PRINT_COUNT - 1){
+                if (i < PRINT_COUNT - 1) {
                     try {
                         // 通过fontLock等待被唤醒
                         fontLock.wait();

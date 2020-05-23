@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 public class MathTest {
 
     @Test
-    public void test1(){
-        System.out.println(Math.floor(Math.random()*100)); //86.0
-        String a="a";
-        String b="A";
+    public void test1() {
+        System.out.println(Math.floor(Math.random() * 100)); //86.0
+        String a = "a";
+        String b = "A";
         System.out.println(a.equalsIgnoreCase(b));     //true
         System.out.println(a.compareToIgnoreCase(b));  //0
     }
